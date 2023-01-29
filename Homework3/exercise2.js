@@ -9,18 +9,54 @@ $(document).ready(function() {
                 console.log("Success!");
                 console.log(response);
                 // let responseObject = JSON.parse(response);
-                // let resultTitle = result.getElementsByTagName("h1")[0];
-                // let resultTable = result.getElementsByTagName("table")[0];
+                let resultTitle = result.getElementsByTagName("h1")[0];
+                resultTitle.innerHTML = `${response.name}`;
+                
                 let table = document.createElement('table');
-                let headerRow = document.createElement('tr');
+                document.body.appendChild(table);
                 let headers = ['Height', 'Weight', 'Eye Color', 'Hair Color'];
-                headers.forEach(headerContent => {
-                    let header = document.createElement('th');
-                    let textNode = document.createTextNode(headerContent);
-                    header.appendChild(textNode);
-                    headerRow.appendChild(header);
+                callBtn.addEventListener("click", function(){
+                    table.innerHTML = "";
+                    let headerRow = document.createElement('tr');
+                    let heightCol= document.createElement('th');
+                    heightCol.innerHTML = "Height";
+                    let weightCol = document.createElement('th');
+                    weightCol.innerHTML = "Weight";
+                    let eyeColorCol = document.createElement('th');
+                    eyeColorCol.innerHTML = "Eye Color";
+                    let hairColorCol = document.createElement('th');
+                    hairColorCol.innerHTML = "Hair Color";
+                    headerRow.appendChild(heightCol);
+                    headerRow.appendChild(weightCol);
+                    headerRow.appendChild(eyeColorCol);
+                    headerRow.appendChild(hairColorCol);
+                    table.appendChild(headerRow);   
+                    
+                    
+                    let row = document.createElement('tr');
+                    let height = document.createElement('td');
+                    height.innerHTML = `${response.height}`;
+                    let weight = document.createElement('td');
+                    weight.innerHTML = `${response.mass}`;
+                    let eyeColor = document.createElement('td');
+                    eyeColor.innerHTML = `${response.eye_color
+                    }`;
+                    let hairColor = document.createElement('td');
+                    hairColor.innerHTML = `${response.hair_color}`;
+                    row.appendChild(height);
+                    row.appendChild(weight);
+                    row.appendChild(eyeColor);
+                    row.appendChild(hairColor);
+                    
+                    table.appendChild(row);
                 });
-                table.appendChild(headerRow);
+                // headers.forEach(headerContent => {
+                //     let header = document.createElement('th');
+                //     let textNode = document.createTextNode(headerContent);
+                //     header.appendChild(textNode);
+                //     headerRow.appendChild(header);
+                // });
+                // table.appendChild(headerRow);
 
                 // let height = result.getElementsByTagName("th")[0];
                 // let weight = result.getElementsByTagName("th")[1];
@@ -44,14 +80,14 @@ $(document).ready(function() {
                 //     return row;
                 // }
 
-                // resultTable.appendChild(createColumn('Height'));
-                // resultTable.appendChild(createColumn('Weight'));
-                // resultTable.appendChild(createColumn('Eye Color'));
-                // resultTable.appendChild(createColumn('Hair color'));
-                // resultTable.appendChild(createRow(`${response.height}`));
-                // resultTable.appendChild(createRow(`${response.mass}`));
-                // resultTable.appendChild(createRow(`${response.eye_color}`));
-                // resultTable.appendChild(createRow(`${response.hair_color}`));
+                //  resultTable.appendChild(createColumn('Height'));
+                //  resultTable.appendChild(createColumn('Weight'));
+                //  resultTable.appendChild(createColumn('Eye Color'));
+                //  resultTable.appendChild(createColumn('Hair color'));
+                //  resultTable.appendChild(createRow(`${response.height}`));
+                //  resultTable.appendChild(createRow(`${response.mass}`));
+                //  resultTable.appendChild(createRow(`${response.eye_color}`));
+                //  resultTable.appendChild(createRow(`${response.hair_color}`));
                 
                 
                 

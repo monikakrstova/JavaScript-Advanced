@@ -31,7 +31,7 @@ createBtn.addEventListener("click", function(e){
     reminders.push(new Reminder(titleElem.value, priorityElem.value, colorElem.value, descriptionElem.value));
     titleElem.value = "";
     priorityElem.value = "";
-    colorElem.value = "";
+    colorElem.value = "black";
     descriptionElem.value = "";
     }
 })
