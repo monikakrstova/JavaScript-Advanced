@@ -1,6 +1,10 @@
 $(document).ready(function() {
     let callBtn = document.getElementById("callBtn");
     let result = document.getElementById("result");
+
+    let table = document.createElement('table');
+    document.body.appendChild(table);
+
     callBtn.addEventListener("click", function(e){
         $.ajax({
             url:"https://swapi.dev/api/people/1",
@@ -12,10 +16,9 @@ $(document).ready(function() {
                 let resultTitle = result.getElementsByTagName("h1")[0];
                 resultTitle.innerHTML = `${response.name}`;
                 
-                let table = document.createElement('table');
-                document.body.appendChild(table);
+
                 let headers = ['Height', 'Weight', 'Eye Color', 'Hair Color'];
-                callBtn.addEventListener("click", function(){
+                
                     table.innerHTML = "";
                     let headerRow = document.createElement('tr');
                     let heightCol= document.createElement('th');
@@ -48,8 +51,7 @@ $(document).ready(function() {
                     row.appendChild(eyeColor);
                     row.appendChild(hairColor);
                     
-                    table.appendChild(row);
-                });    
+                    table.appendChild(row); 
             },
             error: function(error){
                 console.log(error);
