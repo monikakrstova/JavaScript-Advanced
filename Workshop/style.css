@@ -1,0 +1,50 @@
+:root {
+    --color-dark: #34495e;
+    --color-light: #ecf0f1;
+    --color-primary: #9b59b6;
+    --color-accent: #a29bfe;
+}
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    
+}
+body {
+    background-color: var(--color-dark);
+}
+
+.logo {
+    width: 500px;
+    object-position: center;
+    background-color: #34495e;
+}
+
+.rocket {
+    width: 200px;
+    object-position: center;
+}
+
+.cosmonaut {
+    width: 200px;
+    align-items: center;
+}
+
+button {
+    background-color: var(--color-dark);
+    border-radius: 50%;
+    border: none;
+
+}
+
+button:hover, button:active, button:visited {
+    border: none;
+}
